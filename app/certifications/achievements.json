@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cert-1",
+    "title": "Next.js Advanced Course",
+    "description": "Completed an advanced course covering Next.js, routing, and performance optimizations.",
+    "date": "2024-06-15",
+    "image_url": "/certificates/nextjs-advanced.png",
+    "type": "certification"
+  },
+  {
+    "id": "cert-2",
+    "title": "Tailwind CSS Expert",
+    "description": "Certification for mastery in Tailwind CSS and responsive design.",
+    "date": "2023-11-03",
+    "image_url": "/certificates/tailwind-expert.png",
+    "type": "certification"
+  },
+  {
+    "id": "award-1",
+    "title": "Hackathon Winner",
+    "description": "First place in a regional hackathon for building an accessibility tool.",
+    "date": "2022-09-20",
+    "image_url": "/certificates/hackathon-winner.png",
+    "type": "award"
+  }
+]
