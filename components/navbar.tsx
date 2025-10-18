@@ -27,7 +27,7 @@ export function Navbar() {
           <BookOpen className="w-5 h-5" />
         </Link>
         <a
-          href="https://github.com"
+          href="https://github.com/csxark"
           target="_blank"
           rel="noopener noreferrer"
           className="text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
@@ -36,7 +36,7 @@ export function Navbar() {
           <Github className="w-5 h-5" />
         </a>
         <a
-          href="https://linkedin.com"
+          href="https://www.linkedin.com/in/csxark/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
