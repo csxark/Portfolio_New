@@ -138,11 +138,11 @@ export default function Home() {
                 It is an interactive web platform designed to provide empathetic emotional support through real-time voice and text conversations. The platform focuses on accessibility, privacy, and cultural sensitivity, featuring secure data handling, multi-modal UI, and crisis detection to offer a personalized and trustworthy user experience.
               </p>
               <div className="flex flex-wrap gap-2 mb-6">
-                <Badge variant="secondary" className="bg-slate-200 dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-800 px-3 py-1">React</Badge>
-                <Badge variant="secondary" className="bg-slate-200 dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-800 px-3 py-1">Tailwind CSS</Badge>
-                <Badge variant="secondary" className="bg-slate-200 dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-800 px-3 py-1">SupaBase</Badge>
-                <Badge variant="secondary" className="bg-slate-200 dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-800 px-3 py-1">Google Gemini Ai</Badge>
-                <Badge variant="secondary" className="bg-slate-200 dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-800 px-3 py-1">OmniDiemension</Badge>
+                <Badge variant="secondary" className="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700 px-3 py-1">React</Badge>
+                <Badge variant="secondary" className="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700 px-3 py-1">Tailwind CSS</Badge>
+                <Badge variant="secondary" className="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700 px-3 py-1">SupaBase</Badge>
+                <Badge variant="secondary" className="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700 px-3 py-1">Google Gemini Ai</Badge>
+                <Badge variant="secondary" className="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700 px-3 py-1">OmniDiemension</Badge>
               </div>
               <div className="flex gap-3">
                 <a href="https://hope-flow.vercel.app/" target="_blank" rel="noopener noreferrer">
