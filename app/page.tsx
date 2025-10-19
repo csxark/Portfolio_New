@@ -1,6 +1,6 @@
 'use client';
 
-import { Github, Twitter, Mail, ExternalLink, X } from 'lucide-react';
+import { Github, Mail, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -101,7 +101,7 @@ export default function Home() {
                   <h3 className="text-base font-semibold">Manipal University Jaipur</h3>
                   <p className="text-slate-400 text-sm">Bachelor of Technology in Computer Science and Engineering</p>
                 </div>
-                <span className="text-xs text-slate-500">2023 - 2027</span>
+                <span className="text-xs text-slate-500">2024 - 2028</span>
               </div>
             </div>
           </div>
@@ -131,7 +131,7 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white dark:bg-black border border-slate-200 dark:border-slate-800 rounded-lg p-6 hover:border-cyan-500 dark:hover:border-slate-700 transition-colors">
+            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg p-6 hover:border-cyan-500 dark:hover:border-slate-700 transition-colors">
               <h3 className="text-2xl font-bold mb-2">HopeFlow</h3>
               <p className="text-slate-500 dark:text-slate-500 text-sm mb-4">2025</p>
               <p className="text-slate-700 dark:text-slate-300 mb-6 leading-relaxed">
@@ -171,33 +171,11 @@ export default function Home() {
                 I&apos;m open to freelance work, collaborations, and full-time opportunities. Send a short message with what you&apos;re building and I&apos;ll reply within 48 hours.
               </p>
 
-              <div className="flex items-center justify-center gap-4">
+              <div className="flex items-center justify-center">
                 <a
-                  href="https://twitter.com/yourhandle"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Open Twitter"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-transparent bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 transition"
-                >
-                  <Twitter className="w-5 h-5" />
-                  <span className="text-sm">Twitter</span>
-                </a>
-
-                <a
-                  href="https://github.com/csxark"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Open GitHub"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-transparent bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 transition"
-                >
-                  <Github className="w-5 h-5" />
-                  <span className="text-sm">GitHub</span>
-                </a>
-
-                <a
-                  href="mailto:youremail@example.com"
+                  href="mailto:arktandoncs@gmail.com"
                   aria-label="Send email"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-transparent bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 transition"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md border border-transparent bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 transition"
                 >
                   <Mail className="w-5 h-5" />
                   <span className="text-sm">Email</span>

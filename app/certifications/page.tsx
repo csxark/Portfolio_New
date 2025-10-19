@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 import achievementsData from "./achievements.json";
+import CertModal from "@/components/cert-modal";
 
 interface Achievement {
   id: string;
@@ -38,6 +39,20 @@ export default function Certifications() {
   const certifications = achievements.filter((a) => a.type === "certification");
   const awards = achievements.filter((a) => a.type === "award");
 
+  const [selected, setSelected] = useState<Achievement | null>(null);
+  const [modalOpen, setModalOpen] = useState(false);
+
+  function openAchievement(a: Achievement) {
+    setSelected(a);
+    setModalOpen(true);
+  }
+
+  function closeModal() {
+    setModalOpen(false);
+    // small timeout to clear selection after close animation (if any)
+    setTimeout(() => setSelected(null), 200);
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-white to-cyan-100 dark:from-slate-950 dark:via-slate-900 dark:to-cyan-950 text-slate-900 dark:text-slate-50 transition-colors duration-300">
       <Navbar />
@@ -69,7 +84,13 @@ export default function Certifications() {
                   {certifications.map((cert) => (
                     <div
                       key={cert.id}
-                      className="group relative bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/20"
+                      role="button"
+                      tabIndex={0}
+                      onClick={() => openAchievement(cert)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") openAchievement(cert);
+                      }}
+                      className="group relative bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/20 cursor-pointer"
                     >
                       <div className="aspect-video bg-gradient-to-br from-cyan-100 to-blue-100 dark:from-cyan-950 dark:to-blue-950 relative overflow-hidden">
                         {cert.image_url ? (
@@ -112,7 +133,13 @@ export default function Certifications() {
                   {awards.map((award) => (
                     <div
                       key={award.id}
-                      className="group relative bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/20"
+                      role="button"
+                      tabIndex={0}
+                      onClick={() => openAchievement(award)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") openAchievement(award);
+                      }}
+                      className="group relative bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/20 cursor-pointer"
                     >
                       <div className="aspect-video bg-gradient-to-br from-cyan-100 to-blue-100 dark:from-cyan-950 dark:to-blue-950 relative overflow-hidden">
                         {award.image_url ? (
@@ -144,6 +171,8 @@ export default function Certifications() {
                 </div>
               </section>
             )}
+
+            <CertModal open={modalOpen} onClose={closeModal} achievement={selected} />
 
             {achievements.length === 0 && !loading && (
               <div className="text-center py-16">
