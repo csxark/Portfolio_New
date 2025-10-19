@@ -52,7 +52,7 @@ export default function Home() {
           <div className="space-y-4">
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 rounded-full bg-gradient-to-br from-pink-400 to-purple-400 flex items-center justify-center flex-shrink-0 overflow-hidden">
-                <Image src="" alt="LearnIT" width={48} height={48} className="object-cover" />
+                <Image src="/images/experience/LearnIT.svg" alt="LearnIT" width={48} height={48} className="object-cover" />
               </div>
               <div className="flex-1">
                 <div className="flex justify-between items-start mb-1">
