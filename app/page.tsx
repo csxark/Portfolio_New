@@ -72,7 +72,7 @@ export default function Home() {
                 <div className="flex justify-between items-start mb-1">
                   <div>
                     <h3 className="text-base font-semibold">GSsoc</h3>
-                    <p className="text-slate-400 text-sm">Open Source Contributor in UI/UX</p>
+                    <p className="text-slate-400 text-sm">Open Source Contributor</p>
                   </div>
                   <span className="text-xs text-slate-500 dark:text-slate-500">July 2025 - October 2025</span>
                 </div>
