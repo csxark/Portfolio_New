@@ -4,7 +4,6 @@ import { Github, Mail, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Navbar } from '@/components/navbar';
 
 export default function Home() {
@@ -67,7 +66,7 @@ export default function Home() {
 
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center flex-shrink-0 overflow-hidden">
-                <Image src="" alt="gssoc" width={48} height={48} className="object-cover" />
+                <Image src="/images/experience/Gssoc.jpg" alt="gssoc" width={48} height={48} className="object-cover" />
               </div>
               <div className="flex-1">
                 <div className="flex justify-between items-start mb-1">
@@ -79,11 +78,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
-           
-
-            
-
           </div>
         </section>
 
@@ -110,6 +104,7 @@ export default function Home() {
         <section className="mb-12">
           <h2 className="text-2xl font-bold mb-6">Skills</h2>
           <div className="flex flex-wrap gap-2">
+            <Badge variant="secondary" className="bg-slate-900 dark:bg-white text-white dark:text-black hover:bg-slate-800 dark:hover:bg-slate-200 px-3 py-1 text-xs font-normal">JavaScript</Badge>
             <Badge variant="secondary" className="bg-slate-900 dark:bg-white text-white dark:text-black hover:bg-slate-800 dark:hover:bg-slate-200 px-3 py-1 text-xs font-normal">React</Badge>
             <Badge variant="secondary" className="bg-slate-900 dark:bg-white text-white dark:text-black hover:bg-slate-800 dark:hover:bg-slate-200 px-3 py-1 text-xs font-normal">Next.js</Badge>
             <Badge variant="secondary" className="bg-slate-900 dark:bg-white text-white dark:text-black hover:bg-slate-800 dark:hover:bg-slate-200 px-3 py-1 text-xs font-normal">TypeScript</Badge>

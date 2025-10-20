@@ -8,6 +8,14 @@
     "type": "certification"
   },
   {
+    "id": "cert-2",
+    "title": "DSA in Python",
+    "description": "Completed the Data Structures and Algorithms in Python course by IIT Madras on the NPTEL platform. This course helped me strengthen my problem-solving skills and understand various data structures and algorithms using Python.",
+    "date": "2025-09-28",
+    "image_url": "/images/certification/nptel_dsa_python.webp",
+    "type": "certification"
+  },
+  {
     "id": "award-1",
     "title": "Webathon Winner",
     "description": "First place in a regional hackathon for building an interactive web application that promotes Education for All.We bagged 1st place at the Webathon – Pravah’25, SKIT Jaipur! I learned a lot about web development and how to work in a team. I also learned about the importance of deadlines and how to manage time effectively.",
