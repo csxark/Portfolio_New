@@ -57,7 +57,7 @@ export default function Home() {
                 <div className="flex justify-between items-start mb-1">
                   <div>
                     <h3 className="text-base font-semibold">LearnIT</h3>
-                    <p className="text-slate-800 dark:text-slate-400 text-sm">Senior Coordinator - Web Developer</p>
+                    <p className="text-slate-400 dark:text-slate-500 text-sm">Senior Coordinator - Web Developer</p>
                   </div>
                   <span className="text-xs text-slate-600 dark:text-slate-400">May 2025 - Present</span>
                 </div>
@@ -72,9 +72,9 @@ export default function Home() {
                 <div className="flex justify-between items-start mb-1">
                   <div>
                     <h3 className="text-base font-semibold">GSsoc</h3>
-                    <p className="text-slate-400 text-sm">Open Source Contributor</p>
+                    <p className="text-slate-400 dark:text-slate-500 text-sm">Open Source Contributor</p>
                   </div>
-                  <span className="text-xs text-slate-400 dark:text-slate-500">July 2025 - October 2025</span>
+                  <span className="text-xs text-slate-600 dark:text-slate-400">July 2025 - October 2025</span>
                 </div>
               </div>
             </div>
