@@ -57,9 +57,9 @@ export default function Home() {
                 <div className="flex justify-between items-start mb-1">
                   <div>
                     <h3 className="text-base font-semibold">LearnIT</h3>
-                    <p className="text-slate-600 dark:text-slate-400 text-sm">Senior Coordinator - Web Developer</p>
+                    <p className="text-slate-800 dark:text-slate-400 text-sm">Senior Coordinator - Web Developer</p>
                   </div>
-                  <span className="text-xs text-slate-500 dark:text-slate-500">May 2025 - Present</span>
+                  <span className="text-xs text-slate-600 dark:text-slate-400">May 2025 - Present</span>
                 </div>
               </div>
             </div>
@@ -74,7 +74,7 @@ export default function Home() {
                     <h3 className="text-base font-semibold">GSsoc</h3>
                     <p className="text-slate-400 text-sm">Open Source Contributor</p>
                   </div>
-                  <span className="text-xs text-slate-500 dark:text-slate-500">July 2025 - October 2025</span>
+                  <span className="text-xs text-slate-400 dark:text-slate-500">July 2025 - October 2025</span>
                 </div>
               </div>
             </div>
@@ -95,7 +95,7 @@ export default function Home() {
                   <h3 className="text-base font-semibold">Manipal University Jaipur</h3>
                   <p className="text-slate-400 text-sm">Bachelor of Technology in Computer Science and Engineering</p>
                 </div>
-                <span className="text-xs text-slate-500">2024 - 2028</span>
+                <span className="text-xs text-slate-400">2024 - 2028</span>
               </div>
             </div>
           </div>
@@ -147,6 +147,33 @@ export default function Home() {
                   </Button>
                 </a>
                 <a href="https://github.com/csxark/HopeFlow" target="_blank" rel="noopener noreferrer">
+                <Button variant="secondary" size="sm" className="bg-slate-900 dark:bg-white text-white dark:text-black hover:bg-slate-800 dark:hover:bg-slate-200">
+                  <Github className="w-4 h-4 mr-2" />
+                  Source
+                </Button></a>
+              </div>
+            </div>
+            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg p-6 hover:border-cyan-500 dark:hover:border-slate-700 transition-colors">
+              <h3 className="text-2xl font-bold mb-2">Finlo</h3>
+              <p className="text-slate-500 dark:text-slate-500 text-sm mb-4">2025</p>
+              <p className="text-slate-700 dark:text-slate-300 mb-6 leading-relaxed">
+                Finlo is a comprehensive personal finance management web application designed to help users track their income, expenses, and savings goals. With an intuitive interface and robust features, Finlo empowers users to make informed financial decisions and achieve their financial objectives. Key features include real-time expense tracking, budget planning, visual analytics, and secure data management, all aimed at simplifying personal finance for users of all levels.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-6">
+                <Badge variant="secondary" className="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700 px-3 py-1">React</Badge>
+                <Badge variant="secondary" className="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700 px-3 py-1">Tailwind CSS</Badge>
+                <Badge variant="secondary" className="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700 px-3 py-1">SupaBase</Badge>
+                <Badge variant="secondary" className="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700 px-3 py-1">Chart.js</Badge>
+
+              </div>
+              <div className="flex gap-3">
+                <a href="https://finlo-theta.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  <Button variant="secondary" size="sm" className="bg-slate-900 dark:bg-white text-white dark:text-black hover:bg-slate-800 dark:hover:bg-slate-200">
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    Website
+                  </Button>
+                </a>
+                <a href="https://github.com/csxark/Finlo" target="_blank" rel="noopener noreferrer">
                 <Button variant="secondary" size="sm" className="bg-slate-900 dark:bg-white text-white dark:text-black hover:bg-slate-800 dark:hover:bg-slate-200">
                   <Github className="w-4 h-4 mr-2" />
                   Source
