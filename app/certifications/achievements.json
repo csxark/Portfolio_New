@@ -22,5 +22,13 @@
     "date": "2025-02-18",
     "image_url": "/images/certification/webathon_winner.webp",
     "type": "award"
+  },
+  {
+    "id": "award-2",
+    "title": "GirlScript Summer of Code 2025",
+    "description": "Selected as a Contributor in GirlScript Summer of Code 2025. Worked in Open Source projects and contributed to the community. Gained experience in collaborative coding, version control, and open-source best practices. It was a great to enhance my coding skills and connect with like-minded individuals.",
+    "date": "2025-11-07",
+    "image_url": "/images/certification/gssoc.webp",
+    "type": "award"
   }
 ]

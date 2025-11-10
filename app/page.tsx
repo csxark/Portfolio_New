@@ -19,7 +19,7 @@ export default function Home() {
               {/* <span className="inline-block animate-wave">👋</span> */}
             </h1>
             <p className="text-slate-600 dark:text-slate-400 text-base max-w-md leading-relaxed mx-auto md:mx-0">
-              Frontend Developer passionate about crafting scalable and human-centered digital experiences.
+              Frontend Developer passionate about crafting scalable and human-centered digital experiences, Into Data Anyaltics and Machine Learning. 
             </p>
           </div>
 
