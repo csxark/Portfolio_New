@@ -33,7 +33,7 @@ const modalVariants = {
     opacity: 1, 
     scale: 1, 
     y: 0, 
-    transition: { type: "spring", damping: 25, stiffness: 300 } 
+    transition: { duration: 0.3 } 
   },
   exit: { opacity: 0, scale: 0.95, y: 10, transition: { duration: 0.2 } }
 };
