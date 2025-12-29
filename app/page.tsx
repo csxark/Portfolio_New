@@ -127,6 +127,32 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg p-6 hover:border-cyan-500 dark:hover:border-slate-700 transition-colors">
+              <h3 className="text-2xl font-bold mb-2">AlgoViz</h3>
+              <p className="text-slate-500 dark:text-slate-500 text-sm mb-4">2025</p>
+              <p className="text-slate-700 dark:text-slate-300 mb-6 leading-relaxed">
+                AlgoViz is an interactive web application designed to help users visualize and understand various algorithms and data structures. The platform offers dynamic animations and step-by-step explanations, making it easier for learners to grasp complex concepts. Key features include customizable visualizations, a wide range of algorithms, and an intuitive user interface that enhances the learning experience.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-6">
+                <Badge variant="secondary" className="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700 px-3 py-1">React</Badge>
+                <Badge variant="secondary" className="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700 px-3 py-1">Tailwind CSS</Badge>
+                <Badge variant="secondary" className="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700 px-3 py-1">Framer Motion</Badge>
+    
+              </div>
+              <div className="flex gap-3">
+                <a href="https://algo-viz-nine.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  <Button variant="secondary" size="sm" className="bg-slate-900 dark:bg-white text-white dark:text-black hover:bg-slate-800 dark:hover:bg-slate-200">
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    Website
+                  </Button>
+                </a>
+                <a href="https://github.com/csxark/AlgoViz" target="_blank" rel="noopener noreferrer">
+                <Button variant="secondary" size="sm" className="bg-slate-900 dark:bg-white text-white dark:text-black hover:bg-slate-800 dark:hover:bg-slate-200">
+                  <Github className="w-4 h-4 mr-2" />
+                  Source
+                </Button></a>
+              </div>
+            </div>
+            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg p-6 hover:border-cyan-500 dark:hover:border-slate-700 transition-colors">
               <h3 className="text-2xl font-bold mb-2">HopeFlow</h3>
               <p className="text-slate-500 dark:text-slate-500 text-sm mb-4">2025</p>
               <p className="text-slate-700 dark:text-slate-300 mb-6 leading-relaxed">
