@@ -110,7 +110,7 @@ const hoverCard = {
   }
 };
 
-export default function Certifications() {
+export default function Awards() {
   const [achievements, setAchievements] = useState<Achievement[]>([]);
   const [loading, setLoading] = useState(true);
 

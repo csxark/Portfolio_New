@@ -1,6 +1,6 @@
 'use client';
 
-import { Home, BookOpen, Github, Linkedin, Moon, Sun } from 'lucide-react';
+import { Home, Award, Github, Linkedin, Moon, Sun, Medal, Trophy } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTheme } from '@/lib/theme-context';
@@ -20,11 +20,11 @@ export function Navbar() {
           <Home className="w-5 h-5" />
         </Link>
         <Link
-          href="/certifications"
-          className={`transition-colors ${pathname === '/certifications' ? 'text-slate-900 dark:text-white' : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'}`}
-          aria-label="Certifications"
+          href="/Awards"
+          className={`transition-colors ${pathname === '/Awards' ? 'text-slate-900 dark:text-white' : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'}`}
+          aria-label="Awards"
         >
-          <BookOpen className="w-5 h-5" />
+          <Trophy className="w-5 h-5" />
         </Link>
         <a
           href="https://github.com/csxark"

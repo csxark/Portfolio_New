@@ -50,7 +50,14 @@ export default function Home() {
       logo: "/images/experience/LearnIT.svg" 
     },
     { 
-      company: "GSsoc", 
+      company: "EliteCoders Winter of Code 2026", 
+      role: "Project Admin", 
+      date: "January 2026 - March 2026", 
+      color: "bg-slate-800",
+      logo: "/images/experience/ewoc.png" 
+    },
+    { 
+      company: "GirlScript Summer of Code 2025", 
       role: "Open Source Contributor", 
       date: "July 2025 - October 2025", 
       color: "bg-slate-800",
@@ -94,7 +101,7 @@ export default function Home() {
             </motion.h1>
             
             <motion.p variants={fadeInUp} className="text-slate-600 dark:text-slate-400 text-lg max-w-lg leading-relaxed mx-auto md:mx-0 mb-8">
-              Web Developer crafting scalable, human-centered digital experiences. Pursuing in Data Analytics and Machine Learning.
+              Web Developer crafting scalable, human-centered digital experiences. Pursuing in Data and Generative AI.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex gap-4 justify-center md:justify-start">
@@ -135,7 +142,7 @@ export default function Home() {
           </h2>
           <div className="bg-white/80 dark:bg-slate-900/50 backdrop-blur-md border border-cyan-100 dark:border-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
             <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
-              I am a passionate Frontend Developer with a knack for creating engaging and user-friendly digital experiences. With a strong foundation in Data Analytics and Machine Learning, I bring a unique perspective to web development, ensuring that every project I undertake is not only visually appealing but also data-driven and efficient. My goal is to bridge the gap between technology and users, crafting solutions that are both innovative and accessible.
+              A passionate Developer with a knack for creating engaging and user-friendly digital experiences. With a strong foundation in Data and Generative AI, I bring a unique perspective to  development, ensuring that every project I undertake is not only visually appealing but also data-driven and efficient. My goal is to bridge the gap between technology and users, crafting solutions that are both innovative and accessible.
               <br /><br />
               When I&apos;m not coding, you can find me exploring the latest tech trends, contributing to open-source projects, or indulging in my love for photography and travel. I believe in continuous learning and am always eager to take on new challenges that push the boundaries of my skills.
             </p>
