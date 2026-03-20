@@ -22,7 +22,7 @@ interface Achievement {
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.45 } },
 };
 
 const staggerContainer = {
@@ -64,21 +64,17 @@ const TYPE_CONFIG = {
 };
 
 
-const StatBar = ({
-  total,
-  certs,
-  awards,
-}: {
+const StatBar = React.memo<{
   total: number;
   certs: number;
   awards: number;
-}) => {
-  const stats = [
+}>(({ total, certs, awards }) => {
+  const stats = useMemo(() => [
     { num: total, label: "Total achievements", Icon: Star },
     { num: certs, label: "Certifications", Icon: BookOpen },
     { num: awards, label: "Awards", Icon: Trophy },
     { num: certs + awards > 0 ? new Date().getFullYear() - 2024 + 1 : 0, label: "Active years", Icon: GitMerge },
-  ];
+  ], [total, certs, awards]);
 
   return (
     <motion.div
@@ -99,27 +95,23 @@ const StatBar = ({
       ))}
     </motion.div>
   );
-};
+});
+StatBar.displayName = "StatBar";
 
 
 type FilterValue = "all" | "certification" | "award";
 
-const FilterPills = ({
-  active,
-  onChange,
-  certCount,
-  awardCount,
-}: {
+const FilterPills = React.memo<{
   active: FilterValue;
   onChange: (f: FilterValue) => void;
   certCount: number;
   awardCount: number;
-}) => {
-  const options: { value: FilterValue; label: string; count: number }[] = [
-    { value: "all", label: "All", count: certCount + awardCount },
-    { value: "certification", label: "Certifications", count: certCount },
-    { value: "award", label: "Awards", count: awardCount },
-  ];
+}>(({ active, onChange, certCount, awardCount }) => {
+  const options = useMemo(() => [
+    { value: "all" as const, label: "All", count: certCount + awardCount },
+    { value: "certification" as const, label: "Certifications", count: certCount },
+    { value: "award" as const, label: "Awards", count: awardCount },
+  ], [certCount, awardCount]);
 
   return (
     <motion.div variants={fadeInUp} className="flex flex-wrap items-center gap-2 mb-8">
@@ -153,7 +145,8 @@ const FilterPills = ({
       </span>
     </motion.div>
   );
-};
+});
+FilterPills.displayName = "FilterPills";
 
 const AchievementCard = React.memo<{
   achievement: Achievement;
@@ -253,23 +246,22 @@ const AchievementCard = React.memo<{
 
 AchievementCard.displayName = "AchievementCard";
 
-const SectionHeader = ({
-  label,
-  color,
-  Icon,
-}: {
+const SectionHeader = React.memo<{
   label: string;
   color: string;
   Icon: React.ComponentType<{ className?: string }>;
-}) => (
+}>(({ label, color, Icon }) => (
   <motion.div variants={fadeInUp} className="flex items-center gap-3 mb-8">
     <span className="w-1 h-8 rounded-full" style={{ background: color }} />
-    <Icon className="w-5 h-5" style={{ color }} />
+    <div style={{ color }}>
+      <Icon className="w-5 h-5" />
+    </div>
     <h2 className="text-2xl font-bold text-slate-900 dark:text-white">{label}</h2>
   </motion.div>
-);
+));
+SectionHeader.displayName = "SectionHeader";
 
-const EmptyState = () => (
+const EmptyState = React.memo(() => (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -285,7 +277,8 @@ const EmptyState = () => (
       Start adding your certifications and awards to showcase your accomplishments.
     </p>
   </motion.div>
-);
+));
+EmptyState.displayName = "EmptyState";
 
 export default function Awards() {
   const [achievements, setAchievements] = useState<Achievement[]>([]);
@@ -340,8 +333,12 @@ export default function Awards() {
     setTimeout(() => setSelected(null), 200);
   }, []);
 
+  const handleCardClick = useCallback((item: Achievement) => {
+    openAchievement(item);
+  }, [openAchievement]);
+
   // Determine which card is "featured" (first cert, if visible)
-  const featuredId = certifications[0]?.id ?? awards[0]?.id ?? null;
+  const featuredId = useMemo(() => certifications[0]?.id ?? awards[0]?.id ?? null, [certifications, awards]);
 
   return (
     <div className="relative min-h-screen bg-white dark:bg-[#030712] text-slate-900 dark:text-slate-50 transition-colors duration-300 overflow-hidden selection:bg-cyan-500/30">
@@ -418,7 +415,7 @@ export default function Awards() {
                     <AchievementCard
                       key={item.id}
                       achievement={item}
-                      onClick={() => openAchievement(item)}
+                      onClick={() => handleCardClick(item)}
                       type={item.type === "certification" ? "cert" : "award"}
                     />
                   ))}
@@ -445,7 +442,7 @@ export default function Awards() {
                           <AchievementCard
                             key={cert.id}
                             achievement={cert}
-                            onClick={() => openAchievement(cert)}
+                            onClick={() => handleCardClick(cert)}
                             type="cert"
                             featured={idx === 0}
                           />
@@ -466,7 +463,7 @@ export default function Awards() {
                           <AchievementCard
                             key={award.id}
                             achievement={award}
-                            onClick={() => openAchievement(award)}
+                            onClick={() => handleCardClick(award)}
                             type="award"
                             featured={idx === 0}
                           />
