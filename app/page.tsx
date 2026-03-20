@@ -66,7 +66,7 @@ export default function Home() {
     }
   ], []);
 
-  const skills = useMemo(() => ["JavaScript", "React", "Next.js", "TypeScript", "Node.js", "Python", "C", "PostgreSQL", "Prisma"], []);
+  const skills = useMemo(() => ["JavaScript", "React", "Next.js", "TypeScript", "Node.js", "Python", "C", "PostgreSQL", "Prisma", "LangChain", "LangGraph"], []);
 
   return (
     <div className="relative min-h-screen bg-white dark:bg-[#030712] text-slate-900 dark:text-slate-50 transition-colors duration-300 overflow-hidden selection:bg-cyan-500/30" style={{ WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>
