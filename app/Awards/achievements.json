@@ -30,5 +30,13 @@
     "date": "2025-11-07",
     "image_url": "/images/certification/gssoc.webp",
     "type": "award"
+  },
+  {
+    "id": "award-3",
+    "title": "Student Excellence Award",
+    "description": "Recognized for outstanding academic performance and contributions to the university community. This award acknowledges my dedication to excellence in both academics and extracurricular activities.",
+    "date": "2026-03-19",
+    "image_url": "/images/certification/excellence.png",
+    "type": "award"
   }
 ]
