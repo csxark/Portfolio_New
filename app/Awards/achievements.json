@@ -16,6 +16,14 @@
     "type": "certification"
   },
   {
+    "id": "cert-3",
+    "title": "Generative and Agentic AI",
+    "description": "Completed the Generative and Agentic AI course by Hitesh Choudhary and Piyush Garg on the Coursera platform. This course provided a comprehensive understanding of generative AI models and their applications.",
+    "date": "2026-03-24",
+    "image_url": "/images/certification/genai.webp",
+    "type": "certification"
+  },
+  {
     "id": "award-1",
     "title": "Webathon Winner",
     "description": "First place in a regional hackathon for building an interactive web application that promotes Education for All.We bagged 1st place at the Webathon – Pravah’25, SKIT Jaipur! I learned a lot about web development and how to work in a team. I also learned about the importance of deadlines and how to manage time effectively.",
@@ -37,6 +45,14 @@
     "description": "Recognized for outstanding academic performance and contributions to the university community. This award acknowledges my dedication to excellence in both academics and extracurricular activities.",
     "date": "2026-03-19",
     "image_url": "/images/certification/excellence.png",
+    "type": "award"
+  },
+  {
+    "id": "award-4",
+    "title": "Top 6 Project Admin in EliteCoders Winter of Code 2026",
+    "description": "Recognized as one of the top 6 project admins in the EliteCoders Winter of Code 2026. This award highlights my leadership and organizational skills in managing open-source projects and contributing to the coding community. Being selected as a top project admin is a testament to my dedication and impact in the open-source ecosystem.",
+    "date": "2026-03-15",
+    "image_url": "/images/certification/projectadmin.webp",
     "type": "award"
   }
 ]

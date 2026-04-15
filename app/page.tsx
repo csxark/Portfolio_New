@@ -46,7 +46,7 @@ export default function Home() {
     { 
       company: "LearnIT", 
       role: "Senior Coordinator - Web Developer", 
-      date: "May 2025 - Present", 
+      date: "May 2025 - April 2026", 
       color: "from-cyan-400 to-blue-500", 
       logo: "/images/experience/LearnIT.svg" 
     },
