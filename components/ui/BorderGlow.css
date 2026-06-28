@@ -1,0 +1,25 @@
+.border-glow-card {
+  position: relative;
+  overflow: visible;
+}
+
+.border-glow-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.edge-light {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.edge-light::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}

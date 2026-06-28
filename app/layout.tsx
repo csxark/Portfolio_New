@@ -1,13 +1,32 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Bebas_Neue, Crimson_Pro, IBM_Plex_Mono } from 'next/font/google';
 import { ThemeProvider } from '@/lib/theme-context';
 
-const inter = Inter({ subsets: ['latin'] });
+const bebasNeue = Bebas_Neue({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-display',
+  display: 'swap',
+});
+
+const crimsonPro = Crimson_Pro({
+  subsets: ['latin'],
+  style: ['normal', 'italic'],
+  variable: '--font-heading',
+  display: 'swap',
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  variable: '--font-mono',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
-  title: 'Ark - Portfolio',
-  description: 'Web Developer Portfolio',
+  title: 'Ark Tandon | Developer Portfolio',
+  description: 'Web Developer crafting scalable, human-centered digital experiences. Specializing in Data and Generative AI.',
 };
 
 export default function RootLayout({
@@ -16,8 +35,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html 
+      lang="en" 
+      className={`${bebasNeue.variable} ${crimsonPro.variable} ${ibmPlexMono.variable}`}
+      style={{ scrollBehavior: 'smooth' }}
+      suppressHydrationWarning
+    >
+      <body 
+        className="antialiased bg-[#0C0C0A] text-[#E8E6DC]" 
+        suppressHydrationWarning
+      >
         <ThemeProvider>
           {children}
         </ThemeProvider>
