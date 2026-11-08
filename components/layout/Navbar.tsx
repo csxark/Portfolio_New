@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Github, Linkedin, Twitter, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import { FaGithub as Github, FaLinkedin as Linkedin, FaXTwitter as Twitter } from 'react-icons/fa6';
 import { motion, AnimatePresence } from 'framer-motion';
 import { profileMetadata } from '@/lib/data';
 

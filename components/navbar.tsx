@@ -1,6 +1,7 @@
 'use client';
 
-import { Home, Award, Github, Linkedin, Moon, Sun, Medal, Trophy } from 'lucide-react';
+import { Home, Award, Moon, Sun, Medal, Trophy } from 'lucide-react';
+import { FaGithub as Github, FaLinkedin as Linkedin } from 'react-icons/fa6';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTheme } from '@/lib/theme-context';

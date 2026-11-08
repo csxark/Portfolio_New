@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
-import { Github, Linkedin, Twitter } from 'lucide-react';
+import { FaGithub as Github, FaLinkedin as Linkedin, FaXTwitter as Twitter } from 'react-icons/fa6';
 import { profileMetadata, navItems } from '@/lib/data';
 
 export default function Sidebar() {
