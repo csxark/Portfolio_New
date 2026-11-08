@@ -1,116 +1,55 @@
-'use client';
+﻿'use client';
 
-import { motion } from 'framer-motion';
-import { experiences } from '@/lib/data';
 import Image from 'next/image';
-import { useState } from 'react';
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2
-    }
-  }
-};
-
-const timelineItemReveal = {
-  hidden: { opacity: 0, x: -20 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const }
-  }
-};
-
-interface CompanyLogoProps {
-  src?: string;
-  companyName: string;
-}
-
-const CompanyLogo = ({ src, companyName }: CompanyLogoProps) => {
-  const [error, setError] = useState(false);
-  const initials = companyName.charAt(0);
-
-  if (error || !src) {
-    return (
-      <div className="w-12 h-12 rounded-xl bg-neutral-900 border border-white/10 flex items-center justify-center font-mono text-lg font-bold text-[var(--accent)] select-none">
-        {initials}
-      </div>
-    );
-  }
-
-  return (
-    <div className="w-12 h-12 rounded-xl bg-neutral-900 border border-white/10 overflow-hidden flex items-center justify-center relative">
-      <Image
-        src={src}
-        alt={companyName}
-        width={48}
-        height={48}
-        className="object-cover w-full h-full"
-        loading="lazy"
-        onError={() => setError(true)}
-      />
-    </div>
-  );
-};
+import { motion } from 'framer-motion';
+import { experience } from '@/lib/data';
+import { useSafeReducedMotion } from '@/hooks/useSafeReducedMotion';
 
 export default function Experience() {
-  const [error, setError] = useState(false);
-
+  const reduce = useSafeReducedMotion();
   return (
-    <section id="experience" className="w-full py-24 bg-[var(--bg)] text-[var(--text-primary)] relative border-t border-[var(--border)]">
-      <div className="max-w-5xl mx-auto px-6 md:pl-28 md:pr-12">
-        <div className="font-mono text-xs uppercase tracking-widest text-[var(--text-muted)] mb-12">
-          02 — EXPERIENCE
-        </div>
+    <section id="experience" className="section-anchor section-block">
+      <div className="editorial-container">
+        <motion.div initial={reduce ? false : { opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.4 }}>
+          <p className="section-overline">04 / Experience</p>
+          <h2 className="section-title">Experience & education</h2>
+          <p className="section-intro">Roles, programs, and academic context presented in chronological editorial rows.</p>
 
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="relative border-l border-[var(--border)] ml-4 md:ml-6 pl-8 md:pl-10 space-y-12"
-        >
-          {experiences.map((exp) => (
-            <motion.div
-              key={exp.id}
-              variants={timelineItemReveal}
-              className="relative group"
-            >
-              {/* Timeline dot */}
-              <div className="absolute -left-[41px] md:-left-[49px] top-4 w-4.5 h-4.5 rounded-full border-4 border-[var(--bg)] bg-[var(--accent)] shadow-[0_0_8px_rgba(200,240,77,0.5)] group-hover:scale-125 transition-transform duration-300"></div>
-
-              {/* Experience Card */}
-              <div className="bg-[var(--surface)] border border-[var(--border)] hover:border-[var(--accent)]/30 rounded-none p-6 shadow-xl transition-all duration-300">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-                  <div className="flex items-center gap-4">
-                    <CompanyLogo src={exp.logo} companyName={exp.company} />
-                    <div>
-                      <h3 className="text-lg font-semibold tracking-tight group-hover:text-[var(--accent)] transition-colors duration-300">
-                        {exp.company}
-                      </h3>
-                      <p className="text-sm text-[var(--text-muted)] font-mono">{exp.role}</p>
+          <div className="mt-12 border-t border-[var(--border)]">
+            {experience.map((item) => (
+              <article key={item.id} className="grid gap-4 border-b border-[var(--border)] py-7 md:grid-cols-[220px_minmax(0,1fr)] md:gap-10">
+                <div className="meta-text">
+                  <p className="uppercase tracking-[0.1em] text-[var(--text-primary)]">{item.period}</p>
+                  <p className="mt-2 capitalize">{item.type}</p>
+                  {item.location ? <p className="mt-1">{item.location}</p> : null}
+                </div>
+                <div>
+                  <div className="flex items-start gap-3">
+                    {item.logo ? (
+                      <div className="relative mt-0.5 h-9 w-9 shrink-0 overflow-hidden border border-[var(--border)] bg-[var(--surface)]">
+                        <Image src={item.logo} alt="" fill className="object-contain p-1.5" sizes="36px" />
+                      </div>
+                    ) : null}
+                    <div className="min-w-0">
+                      <h3 className="text-[1.0625rem] font-semibold tracking-[-0.015em] text-[var(--text-primary)]">{item.role}</h3>
+                      <p className="mt-0.5 text-[0.9375rem] text-[var(--text-muted)]">{item.organization}</p>
                     </div>
                   </div>
-                  <span className="inline-flex items-center text-xs font-mono text-[var(--accent)] bg-[var(--accent-dim)] border border-[var(--accent)]/15 px-3 py-1 rounded-none self-start sm:self-center">
-                    {exp.period}
-                  </span>
+                  <p className="mt-4 max-w-2xl text-[0.9375rem] leading-[1.75] text-[var(--text-primary)]">{item.summary}</p>
+                  {item.highlights.length ? (
+                    <ul className="mt-4 space-y-1.5">
+                      {item.highlights.map((h) => (
+                        <li key={h} className="flex gap-2.5 text-[0.9375rem] leading-[1.65] text-[var(--text-muted)]">
+                          <span className="mt-[0.55rem] h-px w-3 shrink-0 bg-[var(--border)]" aria-hidden />
+                          <span>{h}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
                 </div>
-
-                {/* Description Bullets */}
-                <ul className="space-y-2 text-sm text-[var(--text-primary)]/80 leading-relaxed font-body">
-                  {exp.description.map((bullet, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5">
-                      <span className="text-[var(--accent)] mt-1.5">•</span>
-                      <span>{bullet}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
-          ))}
+              </article>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

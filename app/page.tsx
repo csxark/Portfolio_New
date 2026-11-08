@@ -1,37 +1,36 @@
-import Sidebar from '@/components/layout/Sidebar';
+﻿import Nav from '@/components/Nav';
 import Hero from '@/components/sections/Hero';
-import Work from '@/components/sections/Work';
+import About from '@/components/sections/About';
 import Projects from '@/components/sections/Projects';
-import Stack from '@/components/sections/Stack';
-import Education from '@/components/sections/Education';
+import Toolkit from '@/components/sections/Toolkit';
+import Experience from '@/components/sections/Experience';
+import OpenSource from '@/components/sections/OpenSource';
+import CurrentlyBuilding from '@/components/sections/CurrentlyBuilding';
 import Contact from '@/components/sections/Contact';
 
 export default function Page() {
   return (
     <>
-      {/* Accessibility Skip-Link */}
-      <a 
-        href="#main-content" 
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-[var(--accent)] focus:text-black focus:px-4 focus:py-2.5 focus:font-mono focus:text-xs border-2 border-black"
-      >
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:border focus:border-[var(--border)] focus:bg-[var(--bg)] focus:px-3 focus:py-2 focus:text-[var(--text-primary)]">
         Skip to main content
       </a>
-
-      {/* Grid Layout Shell */}
-      <div className="min-h-screen w-full relative grid grid-cols-1 md:grid-cols-[64px_1fr] bg-transparent">
-        {/* Left rail / mobile bottom bar */}
-        <Sidebar />
-
-        {/* Main Content Area */}
-        <main id="main-content" className="w-full min-w-0 pb-16 md:pb-0" tabIndex={-1}>
-          <Hero />
-          <Work />
-          <Projects />
-          <Stack />
-          <Education />
-          <Contact />
-        </main>
-      </div>
+      <Nav />
+      <main id="main-content" tabIndex={-1}>
+        <Hero />
+        <About />
+        <Projects />
+        <Toolkit />
+        <Experience />
+        <OpenSource />
+        <CurrentlyBuilding />
+        <Contact />
+      </main>
+      <footer className="border-t border-[var(--border)]">
+        <div className="editorial-container flex flex-wrap items-center justify-between gap-3 py-7">
+          <p className="meta-text">Ark Tandon</p>
+          <p className="meta-text">Built with Next.js &amp; TypeScript</p>
+        </div>
+      </footer>
     </>
   );
 }

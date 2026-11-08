@@ -1,113 +1,182 @@
-import { ProfileMetadata, Experience, Education, TechItem, Project, NavItem } from '@/types';
+import type {
+  BuildingItem,
+  ExperienceItem,
+  NavItem,
+  OpenSourceItem,
+  ProfileMetadata,
+  Project,
+  ToolkitCategory,
+} from '@/types';
 
 export const profileMetadata: ProfileMetadata = {
   name: 'Ark Tandon',
-  handle: '@csxark',
+  role: 'Software Developer',
+  location: 'Jaipur, India',
   email: 'arktandoncs@gmail.com',
-  tagline: 'Web Developer crafting scalable, human-centered digital experiences. Pursuing Data and Generative AI.',
-  bio: 'A passionate Developer with a knack for creating engaging and user-friendly digital experiences. With a strong foundation in Data and Generative AI, I bring a unique perspective to development, building systems that are both powerful and elegant.',
+  availability: 'Open to software development internships and collaborations',
+  tagline: 'I build web applications and developer tools with a focus on clarity, maintainability, and practical AI features.',
+  bio: 'I study Computer Science & Engineering at Manipal University Jaipur (2024-2028). My recent work includes frontend products, full-stack applications, and open-source contributions through programs like GSSoC and EliteCoders Winter of Code.',
+  focus: ['Full-stack web development', 'Data and generative AI applications', 'Open-source collaboration'],
   socials: [
-    { platform: 'github', url: 'https://github.com/csxark' },
-    { platform: 'linkedin', url: 'https://www.linkedin.com/in/csxark/' },
-    { platform: 'x', url: 'https://x.com/ark_tandon' }
-  ]
+    { platform: 'github', label: 'GitHub', url: 'https://github.com/csxark' },
+    { platform: 'linkedin', label: 'LinkedIn', url: 'https://www.linkedin.com/in/csxark/' },
+    { platform: 'x', label: 'X', url: 'https://x.com/ark_tandon' },
+    { platform: 'email', label: 'Email', url: 'mailto:arktandoncs@gmail.com' },
+  ],
 };
 
-export const experiences: Experience[] = [
-  {
-    id: 'exp-1',
-    company: 'LearnIT',
-    role: 'Senior Coordinator, Web Developer',
-    period: 'May 2025 – Apr 2026',
-    description: [
-      'Led the web development team to design, build, and optimize student portals, raising engagement by 40%.',
-      'Engineered responsive dashboards with React and Node.js for tracking student event schedules.',
-      'Configured automated deployment workflows resulting in a 50% decrease in release downtime.'
-    ]
-  },
-  {
-    id: 'exp-2',
-    company: 'EliteCoders Winter of Code 2026',
-    role: 'Project Admin',
-    period: 'Jan 2026 – Mar 2026',
-    description: [
-      'Orchestrated developer contributions across multiple open-source AI and full-stack modules.',
-      'Managed codebase review policies, improving review cycles and system architecture efficiency.',
-      'Led technical mentoring sessions covering React 19 APIs and agentic frameworks.'
-    ]
-  },
-  {
-    id: 'exp-3',
-    company: 'GirlScript Summer of Code 2025',
-    role: 'Open Source Contributor',
-    period: 'Jul 2025 – Oct 2025',
-    description: [
-      'Contributed atomic components and visual styling modules to global web accessibility repositories.',
-      'Refactored legacy vanilla layouts to Next.js Client Component frameworks.',
-      'Resolved 20+ critical issues regarding cross-browser grid and flex rendering issues.'
-    ]
-  }
-];
-
-export const educationList: Education[] = [
-  {
-    id: 'edu-1',
-    institution: 'Manipal University Jaipur',
-    degree: 'B.Tech Computer Science & Engineering',
-    period: '2024 – 2028',
-    description: 'Specializing in software architecture, core data science methodologies, and deep learning implementations.'
-  }
-];
-
-export const techStack: TechItem[] = [
-  { name: 'JavaScript', category: 'languages-tools' },
-  { name: 'TypeScript', category: 'languages-tools' },
-  { name: 'Python', category: 'languages-tools' },
-  { name: 'C', category: 'languages-tools' },
-  { name: 'React', category: 'frontend' },
-  { name: 'Next.js', category: 'frontend' },
-  { name: 'Node.js', category: 'backend' },
-  { name: 'PostgreSQL', category: 'backend' },
-  { name: 'Prisma', category: 'backend' },
-  { name: 'LangChain', category: 'ai-data' },
-  { name: 'LangGraph', category: 'ai-data' }
+export const navItems: NavItem[] = [
+  { id: 'about', label: 'About', href: '#about' },
+  { id: 'projects', label: 'Projects', href: '#projects' },
+  { id: 'experience', label: 'Experience', href: '#experience' },
+  { id: 'open-source', label: 'Open Source', href: '#open-source' },
+  { id: 'contact', label: 'Contact', href: '#contact' },
+  { id: 'awards', label: 'Awards', href: '/Awards' },
 ];
 
 export const projects: Project[] = [
   {
-    id: 'proj-1',
+    id: 'algoviz',
     title: 'AlgoViz',
     year: '2025',
-    description: 'An interactive algorithm and data-structure visualization dashboard rendering dynamic traversal steps.',
-    websiteUrl: 'https://algo-viz-nine.vercel.app/',
+    category: 'Developer tool',
+    description: 'A browser-based visualizer for algorithms and data-structure operations, built to make step-by-step execution easier to inspect.',
+    stack: ['React', 'Tailwind CSS', 'Framer Motion'],
     githubUrl: 'https://github.com/csxark/AlgoViz',
-    techStack: ['React', 'Tailwind CSS', 'Framer Motion']
+    liveUrl: 'https://algo-viz-nine.vercel.app/',
+    featured: true,
   },
   {
-    id: 'proj-2',
+    id: 'hopeflow',
     title: 'HopeFlow',
     year: '2025',
-    description: 'An empathetic, multi-modal emotional support platform integrating real-time voice and text analysis via OmniDimension AI.',
-    websiteUrl: 'https://hope-flow.vercel.app/',
+    category: 'Web application',
+    description: 'A multi-modal support platform prototype combining text and voice interactions with AI-assisted responses.',
+    stack: ['React', 'Supabase', 'Gemini API', 'Tailwind CSS'],
     githubUrl: 'https://github.com/csxark/HopeFlow',
-    techStack: ['React', 'Supabase', 'Gemini AI', 'Tailwind']
+    liveUrl: 'https://hope-flow.vercel.app/',
   },
   {
-    id: 'proj-3',
+    id: 'finlo',
     title: 'Finlo',
     year: '2025',
-    description: 'A personal financial intelligence dashboard facilitating live expense tracking, budgeting structures, and interactive analytics.',
-    websiteUrl: 'https://finlo-theta.vercel.app/',
+    category: 'Dashboard',
+    description: 'A personal finance dashboard for tracking expenses, budgets, and spending patterns with charts.',
+    stack: ['React', 'Tailwind CSS', 'Supabase', 'Chart.js'],
     githubUrl: 'https://github.com/csxark/Finlo',
-    techStack: ['React', 'Tailwind CSS', 'Supabase', 'Chart.js']
-  }
+    liveUrl: 'https://finlo-theta.vercel.app/',
+  },
+  {
+    id: 'project-todo',
+    title: 'TODO: Add another project',
+    year: 'TODO',
+    category: 'TODO',
+    description: 'TODO: Add a project with concrete scope, stack, and links. Placeholder kept intentionally; no fabricated details.',
+    stack: ['TODO'],
+  },
 ];
 
-export const navItems: NavItem[] = [
-  { id: 'profile', label: 'PROFILE', number: '01' },
-  { id: 'work', label: 'WORK', number: '02' },
-  { id: 'projects', label: 'PROJECTS', number: '03' },
-  { id: 'stack', label: 'STACK', number: '04' },
-  { id: 'education', label: 'EDUCATION', number: '05' },
-  { id: 'contact', label: 'CONTACT', number: '06' }
+export const toolkit: ToolkitCategory[] = [
+  { title: 'Frontend', items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'] },
+  { title: 'Backend', items: ['Node.js', 'PostgreSQL', 'Prisma', 'Supabase', 'TODO: Add APIs/frameworks used'] },
+  { title: 'Databases', items: ['PostgreSQL', 'Supabase', 'TODO: Add others if applicable'] },
+  { title: 'AI / ML', items: ['LangChain', 'LangGraph', 'Gemini API', 'Python', 'TODO: Add model/tooling details'] },
+  { title: 'DevOps / Cloud', items: ['Vercel', 'GitHub Actions (TODO: confirm)', 'TODO: Add deployment platforms used'] },
+  { title: 'Languages', items: ['TypeScript', 'JavaScript', 'Python', 'C'] },
+  { title: 'Tools', items: ['Git', 'GitHub', 'VS Code', 'npm', 'TODO: Add testing/design tools'] },
+];
+
+export const experience: ExperienceItem[] = [
+  {
+    id: 'edu-muj',
+    organization: 'Manipal University Jaipur',
+    role: 'B.Tech, Computer Science & Engineering',
+    period: '2024 - 2028',
+    location: 'Jaipur, India',
+    summary: 'Undergraduate study in computer science and engineering.',
+    highlights: ['Coursework and projects in software development and data/AI topics (TODO: add specific coursework if desired).'],
+    type: 'education',
+  },
+  {
+    id: 'learnit',
+    organization: 'LearnIT',
+    role: 'Senior Coordinator, Web Developer',
+    period: 'May 2025 - Apr 2026',
+    location: 'TODO: Add location/mode',
+    summary: 'Worked on student-facing web interfaces and team coordination.',
+    highlights: [
+      'Built and maintained React/Node.js interfaces for student-facing workflows.',
+      'Supported deployment and release processes for club web projects.',
+    ],
+    type: 'experience',
+    logo: '/images/experience/LearnIT.svg',
+  },
+  {
+    id: 'ewoc-admin',
+    organization: 'EliteCoders Winter of Code 2026',
+    role: 'Project Admin',
+    period: 'Jan 2026 - Mar 2026',
+    summary: 'Managed an open-source project during EliteCoders Winter of Code 2026.',
+    highlights: [
+      'Reviewed contributions and coordinated issue triage for project repositories.',
+      'Recognized among the top 6 project admins (award listed on Awards page).',
+    ],
+    type: 'experience',
+    logo: '/images/experience/ewoc.png',
+  },
+  {
+    id: 'gssoc',
+    organization: 'GirlScript Summer of Code 2025',
+    role: 'Open Source Contributor',
+    period: 'Jul 2025 - Oct 2025',
+    summary: 'Contributed to open-source repositories during GSSoC 2025.',
+    highlights: [
+      'Submitted fixes and improvements across participating repositories.',
+      'Worked with maintainers through pull requests and reviews.',
+    ],
+    type: 'experience',
+    logo: '/images/experience/Gssoc.jpg',
+  },
+];
+
+export const openSource: OpenSourceItem[] = [
+  {
+    id: 'ewoc-top-admin',
+    title: 'Top 6 Project Admin - EliteCoders Winter of Code 2026',
+    period: 'Mar 2026',
+    description: 'Recognized for project administration during EliteCoders Winter of Code 2026.',
+    url: '/Awards',
+    type: 'project-admin',
+  },
+  {
+    id: 'gssoc-contributor',
+    title: 'GirlScript Summer of Code 2025 - Contributor',
+    period: 'Jul - Nov 2025',
+    description: 'Open-source contributions during GSSoC 2025.',
+    url: '/Awards',
+    type: 'contribution',
+  },
+  {
+    id: 'oss-todo',
+    title: 'TODO: Add specific merged PRs or repositories',
+    period: 'TODO',
+    description: 'Add links to notable pull requests, issues, or repositories. Placeholder kept intentionally.',
+    type: 'contribution',
+  },
+];
+
+export const currentlyBuilding: BuildingItem[] = [
+  {
+    id: 'build-1',
+    title: 'TODO: Current project',
+    status: 'In progress',
+    description: 'Add a short, factual note about what you are building now (scope + stack). No placeholder shipped as a claim.',
+  },
+];
+
+export const contactLinks = [
+  { label: 'Email', value: 'arktandoncs@gmail.com', href: 'mailto:arktandoncs@gmail.com' },
+  { label: 'GitHub', value: 'github.com/csxark', href: 'https://github.com/csxark' },
+  { label: 'LinkedIn', value: 'linkedin.com/in/csxark', href: 'https://www.linkedin.com/in/csxark/' },
+  { label: 'Resume', value: 'TODO: Add resume PDF link', href: 'TODO' },
 ];

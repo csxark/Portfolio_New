@@ -1,91 +1,42 @@
-'use client';
+﻿'use client';
 
 import { motion } from 'framer-motion';
-import { profileMetadata } from '@/lib/data';
-
-const fadeInUp = {
-  hidden: { opacity: 0, y: 25 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: 'easeOut' as const }
-  }
-};
+import { ArrowUpRight } from 'lucide-react';
+import { contactLinks, profileMetadata } from '@/lib/data';
+import { useSafeReducedMotion } from '@/hooks/useSafeReducedMotion';
 
 export default function Contact() {
-  const githubLink = profileMetadata.socials.find(s => s.platform === 'github')?.url || '#';
-  const linkedinLink = profileMetadata.socials.find(s => s.platform === 'linkedin')?.url || '#';
-  const xLink = profileMetadata.socials.find(s => s.platform === 'x')?.url || '#';
-
+  const reduce = useSafeReducedMotion();
   return (
-    <section id="contact" className="w-full pt-24 pb-32 bg-transparent text-[var(--text-primary)] relative border-t border-[var(--border)] select-none">
-      <div className="max-w-5xl mx-auto px-6 md:pl-28 md:pr-12">
-        {/* Section label */}
-        <div className="font-mono text-xs uppercase tracking-widest text-[var(--text-muted)] mb-16">
-          06 — CONTACT
-        </div>
-
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeInUp}
-          className="space-y-10"
-        >
-          {/* Large display header */}
-          <h2 className="font-display text-5xl sm:text-7xl md:text-8xl tracking-tight leading-none text-white uppercase">
-            LET'S BUILD SOMETHING.
-          </h2>
-
-          {/* Email link */}
+    <section id="contact" className="section-anchor section-block !border-b-0">
+      <div className="editorial-container">
+        <motion.div initial={reduce ? false : { opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.4 }} className="grid gap-10 md:grid-cols-[minmax(0,220px)_1fr] md:gap-16">
           <div>
-            <a
-              href={`mailto:${profileMetadata.email}`}
-              className="font-mono text-lg sm:text-2xl md:text-3xl text-[var(--accent)] hover:text-white transition-colors duration-200 border-b border-dashed border-[var(--accent)] hover:border-white focus-visible:outline-none py-1"
-              aria-label={`Send email to ${profileMetadata.name}`}
-            >
-              {profileMetadata.email}
-            </a>
+            <p className="section-overline">07 / Contact</p>
+            <h2 className="section-title">Get in touch</h2>
           </div>
-
-          {/* Social list */}
-          <div className="flex flex-wrap items-center gap-6 sm:gap-8 pt-4">
-            <a
-              href={githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-mono text-xs uppercase tracking-wider text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline transition-colors focus-visible:outline-none py-1"
-              aria-label="GitHub profile"
-            >
-              GITHUB
-            </a>
-            <span className="text-[var(--border)] select-none">/</span>
-            <a
-              href={linkedinLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-mono text-xs uppercase tracking-wider text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline transition-colors focus-visible:outline-none py-1"
-              aria-label="LinkedIn profile"
-            >
-              LINKEDIN
-            </a>
-            <span className="text-[var(--border)] select-none">/</span>
-            <a
-              href={xLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-mono text-xs uppercase tracking-wider text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline transition-colors focus-visible:outline-none py-1"
-              aria-label="X Twitter profile"
-            >
-              TWITTER
-            </a>
-          </div>
-
-          {/* Availability notice */}
-          <div className="pt-12 border-t border-[var(--border)]">
-            <p className="font-mono text-[10px] sm:text-[11px] text-[var(--text-muted)] tracking-[0.25em] uppercase leading-relaxed">
-              CURRENTLY AVAILABLE FOR FREELANCE & COLLABORATIONS
+          <div>
+            <p className="max-w-2xl text-[clamp(1.125rem,1rem+0.5vw,1.375rem)] leading-[1.55] tracking-[-0.015em] text-[var(--text-primary)]">
+              Open to internships, collaborations, and project conversations.
             </p>
+            <p className="mt-3 text-[0.9375rem] text-[var(--text-muted)]">Based in {profileMetadata.location}.</p>
+            <div className="mt-10 border-t border-[var(--border)]">
+              {contactLinks.map((item) => {
+                const disabled = item.href === 'TODO';
+                return (
+                  <div key={item.label} className="grid gap-1 border-b border-[var(--border)] py-4 sm:grid-cols-[160px_minmax(0,1fr)] sm:items-center sm:gap-6">
+                    <p className="meta-text uppercase tracking-[0.1em]">{item.label}</p>
+                    {disabled ? (
+                      <span className="text-[0.9375rem] text-[var(--text-muted)]">{item.value}</span>
+                    ) : (
+                      <a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined} className="inline-flex items-center gap-1.5 text-[0.9375rem] text-[var(--text-primary)] editorial-link">
+                        {item.value} <ArrowUpRight size={14} strokeWidth={1.5} aria-hidden />
+                      </a>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </motion.div>
       </div>

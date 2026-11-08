@@ -9,20 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['Bebas Neue', 'system-ui', 'sans-serif'],
-        heading: ['Crimson Pro', 'Georgia', 'serif'],
-        mono: ['IBM Plex Mono', 'Courier New', 'monospace'],
-        body: ['IBM Plex Mono', 'Courier New', 'monospace'],
+        sans: ['var(--font-geist-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       colors: {
-        bg: '#0C0C0A',
-        surface: '#131310',
-        'surface-raised': '#1A1A16',
-        accent: '#C8F04D',
-        'accent-dim': 'rgba(200, 240, 77, 0.12)',
-        'text-primary': '#E8E6DC',
-        'text-muted': '#5A5A50',
-      }
+        bg: '#F5F3EE',
+        surface: '#EEECE6',
+        accent: '#B65332',
+        'accent-hover': '#913F26',
+        'accent-soft': '#F0E0D7',
+        'text-primary': '#171717',
+        'text-muted': '#6C6963',
+        border: '#D9D6CF',
+      },
     },
   },
   plugins: [],
