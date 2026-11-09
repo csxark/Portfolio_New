@@ -5,6 +5,7 @@ import Projects from '@/components/sections/Projects';
 import Toolkit from '@/components/sections/Toolkit';
 import Experience from '@/components/sections/Experience';
 import OpenSource from '@/components/sections/OpenSource';
+import WhyWorkWithMe from '@/components/sections/WhyWorkWithMe';
 import CurrentlyBuilding from '@/components/sections/CurrentlyBuilding';
 import Contact from '@/components/sections/Contact';
 
@@ -22,6 +23,7 @@ export default function Page() {
         <Toolkit />
         <Experience />
         <OpenSource />
+        <WhyWorkWithMe />
         <CurrentlyBuilding />
         <Contact />
       </main>

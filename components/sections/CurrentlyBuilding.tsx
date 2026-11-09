@@ -1,33 +1,81 @@
 ﻿'use client';
 
-import { motion } from 'framer-motion';
+import Reveal from '@/components/ui/Reveal';
+import RevealText from '@/components/ui/RevealText';
 import { currentlyBuilding } from '@/lib/data';
-import { useSafeReducedMotion } from '@/hooks/useSafeReducedMotion';
 
 export default function CurrentlyBuilding() {
-  const reduce = useSafeReducedMotion();
   return (
     <section id="building" className="section-anchor section-block">
       <div className="editorial-container">
-        <motion.div initial={reduce ? false : { opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.4 }}>
-          <p className="section-overline">06 / Building</p>
-          <h2 className="section-title">Currently building</h2>
-          <p className="section-intro">Work in progress is listed only when it can be described factually.</p>
-          <div className="mt-12 border-t border-[var(--border)]">
+        <Reveal y={10}>
+          <p className="section-overline">07 / Building</p>
+        </Reveal>
+
+        <div className="mt-6 grid gap-10 md:grid-cols-[minmax(0,220px)_minmax(0,1fr)] md:gap-16">
+          <Reveal delay={0.04} y={8}>
+            <h2 className="section-title">Currently building</h2>
+            <p className="section-intro">
+              Listed only when it can be described factually.
+            </p>
+          </Reveal>
+
+          <div className="border-t border-[var(--border)]">
             {currentlyBuilding.map((item, index) => (
-              <article key={item.id} className="grid gap-3 border-b border-[var(--border)] py-6 md:grid-cols-[56px_minmax(0,1fr)] md:gap-8">
-                <p className="meta-text">{String(index + 1).padStart(2, '0')}</p>
-                <div>
-                  <p className="meta-text uppercase tracking-[0.12em]">{item.status}</p>
-                  <h3 className="mt-2 text-[1rem] font-semibold tracking-[-0.015em] text-[var(--text-primary)]">{item.title}</h3>
-                  <p className="mt-2 max-w-2xl text-[0.9375rem] leading-[1.7] text-[var(--text-muted)]">{item.description}</p>
+              <Reveal
+                key={item.id}
+                as="article"
+                delay={0.08 + index * 0.04}
+                y={12}
+                className="grid gap-6 border-b border-[var(--border)] py-8 md:grid-cols-[minmax(0,1fr)_auto] md:items-start md:gap-10"
+              >
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+                    <span className="meta-text uppercase tracking-[0.14em] text-[var(--text-secondary)]">
+                      {item.status}
+                    </span>
+                    <span className="meta-text text-[var(--text-muted)]">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                  </div>
+
+                  <RevealText
+                    text={item.title}
+                    as="h3"
+                    delay={0.12 + index * 0.04}
+                    className="mt-3 text-[clamp(1.75rem,3.2vw,3rem)] font-semibold leading-[1.04] tracking-[-0.035em] text-[var(--text-primary)] [text-wrap:balance]"
+                  />
+
+                  <p className="mt-4 max-w-2xl text-[clamp(0.9375rem,0.9rem+0.15vw,1.0625rem)] leading-[1.72] text-[var(--text-secondary)]">
+                    {item.description}
+                  </p>
                 </div>
-              </article>
+
+                <dl className="grid gap-4 text-[0.9375rem] md:min-w-[13rem] md:pt-1">
+                  <div>
+                    <dt className="meta-text uppercase tracking-[0.12em]">Focus</dt>
+                    <dd className="mt-1 leading-[1.6] text-[var(--text-primary)]">
+                      {item.status}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="meta-text uppercase tracking-[0.12em]">Technologies</dt>
+                    <dd className="mt-1 leading-[1.6] text-[var(--text-muted)]">
+                      Not listed yet
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="meta-text uppercase tracking-[0.12em]">Link</dt>
+                    <dd className="mt-1 leading-[1.6] text-[var(--text-muted)]">
+                      Not available
+                    </dd>
+                  </div>
+                </dl>
+              </Reveal>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
 }
-

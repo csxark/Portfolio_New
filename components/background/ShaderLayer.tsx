@@ -14,27 +14,27 @@ export type ShaderPalette = {
   grain: 'on' | 'off';
 };
 
-/** Dark mode: restrained electric-blue/cyan atmosphere on #080D17 base. Preserved. */
+/** Dark mode: warm burnt-orange / red / olive atmosphere on deep black. */
 export const DARK_PALETTE: ShaderPalette = {
-  color1: '#16B9F2',
-  color2: '#357FE8',
-  color3: '#73D8FF',
-  brightness: 0.72,
-  reflection: 0.32,
+  color1: '#ff7a2f',
+  color2: '#c43a2b',
+  color3: '#8a7a2a',
+  brightness: 0.6,
+  reflection: 0.3,
   uStrength: 0.3,
-  uDensity: 0.8,
+  uDensity: 0.85,
   grain: 'on',
 };
 
-/** Light mode: soft blue/pale cyan/icy-white wash on #F8FAFD. Subtle, non-dominant. */
+/** Light mode: soft icy-blue/cyan wash, low intensity, subtle. */
 export const LIGHT_PALETTE: ShaderPalette = {
-  color1: '#C6E8F3',
-  color2: '#BBD9F0',
-  color3: '#E0F0F7',
-  brightness: 0.62,
-  reflection: 0.12,
-  uStrength: 0.15,
-  uDensity: 0.62,
+  color1: '#c9e3f0',
+  color2: '#bfe8f4',
+  color3: '#e4f2f9',
+  brightness: 0.5,
+  reflection: 0.1,
+  uStrength: 0.12,
+  uDensity: 0.55,
   grain: 'off',
 };
 
@@ -102,4 +102,3 @@ export default function ShaderLayer({ pixelDensity, animate, speed, palette }: P
     </ShaderGradientCanvas>
   );
 }
-

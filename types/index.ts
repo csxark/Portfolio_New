@@ -67,3 +67,10 @@ export interface NavItem {
   label: string;
   href: string;
 }
+
+
+export interface WhyWorkItem {
+  id: string;
+  statement: string;
+  detail?: string;
+}

@@ -6,6 +6,7 @@ import type {
   ProfileMetadata,
   Project,
   ToolkitCategory,
+  WhyWorkItem,
 } from '@/types';
 
 export const profileMetadata: ProfileMetadata = {
@@ -179,4 +180,28 @@ export const contactLinks = [
   { label: 'GitHub', value: 'github.com/csxark', href: 'https://github.com/csxark' },
   { label: 'LinkedIn', value: 'linkedin.com/in/csxark', href: 'https://www.linkedin.com/in/csxark/' },
   { label: 'Resume', value: 'TODO: Add resume PDF link', href: 'TODO' },
+];
+
+
+export const whyWorkWithMe: WhyWorkItem[] = [
+  {
+    id: 'clarity',
+    statement: 'I build web apps and developer tools with clarity and maintainability in mind.',
+    detail: 'From algorithm visualizers to full-stack dashboards, code is written to be read and extended by others.',
+  },
+  {
+    id: 'practical-ai',
+    statement: 'I apply practical AI features to real product workflows.',
+    detail: 'Multi-modal support prototypes and data pipelines that use Gemini and LangChain in production-style flows.',
+  },
+  {
+    id: 'open-source',
+    statement: 'I collaborate in open source through structured programs.',
+    detail: 'Contributed during GirlScript Summer of Code 2025 and served as a project admin in EliteCoders Winter of Code 2026.',
+  },
+  {
+    id: 'iterative',
+    statement: 'I learn by shipping and iterating on real projects.',
+    detail: 'Undergraduate coursework and self-directed work feed directly into the tools I ship.',
+  },
 ];
