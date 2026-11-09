@@ -37,7 +37,8 @@ export default function Awards() {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--bg)] text-[var(--text-primary)]">
+    <div className="min-h-screen bg-[var(--bg-base)] text-[var(--text-primary)]">
+
       <header className="border-b border-[var(--border)]">
         <div className="editorial-container flex items-center justify-between py-5">
           <Link href="/" className="inline-flex items-center gap-2 meta-text editorial-link">
@@ -55,8 +56,10 @@ export default function Awards() {
           <div className="mb-6 flex items-center gap-2 meta-text uppercase tracking-[0.12em] text-[var(--text-primary)]"><Award size={14} strokeWidth={1.5} aria-hidden /> Certifications</div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {certifications.map((item) => (
-              <button key={item.id} type="button" onClick={() => onOpen(item)} className="group border border-[var(--border)] bg-[var(--bg)] text-left transition-colors hover:border-[color:color-mix(in_srgb,var(--accent)_40%,var(--border))]">
-                <div className="relative aspect-[16/10] border-b border-[var(--border)] bg-[var(--surface)]">
+              <button key={item.id} type="button" onClick={() => onOpen(item)} className="group border border-[var(--border)] bg-[var(--surface)] text-left transition-colors hover:border-[color:color-mix(in_srgb,var(--accent)_40%,var(--border))]">
+
+                <div className="relative aspect-[16/10] border-b border-[var(--border)] bg-[var(--surface-subtle)]">
+
                   <Image src={item.image_url} alt={item.title} fill className="object-cover transition-transform duration-500 group-hover:scale-[1.015]" sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw" />
                 </div>
                 <div className="p-4">
@@ -73,8 +76,10 @@ export default function Awards() {
           <div className="mb-6 flex items-center gap-2 meta-text uppercase tracking-[0.12em] text-[var(--text-primary)]"><Trophy size={14} strokeWidth={1.5} aria-hidden /> Awards &amp; recognitions</div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {awards.map((item) => (
-              <button key={item.id} type="button" onClick={() => onOpen(item)} className="group border border-[var(--border)] bg-[var(--bg)] text-left transition-colors hover:border-[color:color-mix(in_srgb,var(--accent)_40%,var(--border))]">
-                <div className="relative aspect-[16/10] border-b border-[var(--border)] bg-[var(--surface)]">
+              <button key={item.id} type="button" onClick={() => onOpen(item)} className="group border border-[var(--border)] bg-[var(--surface)] text-left transition-colors hover:border-[color:color-mix(in_srgb,var(--accent)_40%,var(--border))]">
+
+                <div className="relative aspect-[16/10] border-b border-[var(--border)] bg-[var(--surface-subtle)]">
+
                   <Image src={item.image_url} alt={item.title} fill className="object-cover transition-transform duration-500 group-hover:scale-[1.015]" sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw" />
                 </div>
                 <div className="p-4">
@@ -91,3 +96,4 @@ export default function Awards() {
     </div>
   );
 }
+

@@ -20,7 +20,8 @@ export default function Hero() {
             {profileMetadata.tagline}
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-x-5 gap-y-3">
-            <button type="button" onClick={() => go('projects')} className="border border-[var(--text-primary)] bg-[var(--text-primary)] px-4 py-2 text-[0.8125rem] font-medium text-[var(--bg)] transition-colors hover:border-[var(--accent-hover)] hover:bg-[var(--accent-hover)]">
+            <button type="button" onClick={() => go('projects')} className="border border-[var(--text-primary)] bg-[var(--text-primary)] px-4 py-2 text-[0.8125rem] font-medium text-[var(--bg-base)] transition-colors hover:border-[var(--accent-hover)] hover:bg-[var(--accent-hover)] hover:text-white">
+
               Selected work
             </button>
             <button type="button" onClick={() => go('contact')} className="meta-text editorial-link !text-[var(--text-primary)]">
@@ -46,3 +47,4 @@ export default function Hero() {
     </section>
   );
 }
+

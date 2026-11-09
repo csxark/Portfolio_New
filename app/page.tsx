@@ -11,7 +11,7 @@ import Contact from '@/components/sections/Contact';
 export default function Page() {
   return (
     <>
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:border focus:border-[var(--border)] focus:bg-[var(--bg)] focus:px-3 focus:py-2 focus:text-[var(--text-primary)]">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:border focus:border-[var(--border)] focus:bg-transparent focus:px-3 focus:py-2 focus:text-[var(--text-primary)]">
         Skip to main content
       </a>
       <Nav />
@@ -34,3 +34,4 @@ export default function Page() {
     </>
   );
 }
+

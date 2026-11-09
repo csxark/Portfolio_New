@@ -9,7 +9,7 @@ type Variant = 'featured' | 'grid' | 'row';
 function ProjectVisual({ project }: { project: Project }) {
   if (project.image) {
     return (
-      <div className="relative aspect-[16/10] overflow-hidden border border-[var(--border)] bg-[var(--surface)]">
+      <div className="relative aspect-[16/10] overflow-hidden border border-[var(--border)] bg-[color:color-mix(in_srgb,var(--surface)_72%,transparent)]">
         <Image
           src={project.image}
           alt={`${project.title} screenshot`}
@@ -21,7 +21,7 @@ function ProjectVisual({ project }: { project: Project }) {
     );
   }
   return (
-    <div className="relative flex aspect-[16/10] flex-col justify-between overflow-hidden border border-[var(--border)] bg-[var(--surface)] p-5 md:p-6">
+    <div className="relative flex aspect-[16/10] flex-col justify-between overflow-hidden border border-[var(--border)] bg-[color:color-mix(in_srgb,var(--surface)_72%,transparent)] p-5 md:p-6">
       <div className="meta-text uppercase tracking-[0.14em]">{project.category}</div>
       <div>
         <div className="max-w-[14ch] text-[clamp(1.5rem,1.2rem+1.4vw,2.25rem)] font-semibold leading-[1.02] tracking-[-0.03em] text-[var(--text-primary)]">
@@ -59,7 +59,7 @@ export default function ProjectCard({ project, variant = 'grid' }: { project: Pr
         <div className="border-b border-[var(--border)] md:border-b-0 md:border-r">
           <ProjectVisual project={project} />
         </div>
-        <div className="flex flex-col justify-between bg-[var(--bg)] p-6 md:p-8">
+        <div className="flex flex-col justify-between bg-transparent p-6 md:p-8">
           <div>
             <p className="meta-text uppercase tracking-[0.14em]">Featured / {project.category}</p>
             <h3 className="mt-3 text-[clamp(1.625rem,1.35rem+1.1vw,2.125rem)] font-semibold leading-[1.1] tracking-[-0.025em] text-[var(--text-primary)]">{project.title}</h3>
@@ -92,7 +92,7 @@ export default function ProjectCard({ project, variant = 'grid' }: { project: Pr
   }
 
   return (
-    <article className="group flex flex-col border border-[var(--border)] bg-[var(--bg)]">
+    <article className="group flex flex-col border border-[var(--border)] bg-transparent">
       <ProjectVisual project={project} />
       <div className="flex flex-1 flex-col p-5 md:p-6">
         <div className="flex items-start justify-between gap-4">
@@ -113,3 +113,4 @@ export default function ProjectCard({ project, variant = 'grid' }: { project: Pr
     </article>
   );
 }
+

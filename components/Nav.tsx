@@ -2,9 +2,10 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { Menu, Moon, Sun, X } from 'lucide-react';
 import { navItems } from '@/lib/data';
 import { useSafeReducedMotion } from '@/hooks/useSafeReducedMotion';
+import { useTheme } from '@/hooks/useTheme';
 
 const sectionIds = navItems.filter((item) => item.href.startsWith('#')).map((item) => item.id);
 
@@ -12,6 +13,7 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState('about');
   const reduce = useSafeReducedMotion();
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const ratios = new Map<string, number>();
@@ -51,7 +53,9 @@ export default function Nav() {
   );
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[color:color-mix(in_srgb,var(--bg)_96%,transparent)] backdrop-blur-[2px]">
+    <header className="sticky top-0 z-50 border-b border-[var(--nav-border)] bg-[var(--nav-bg)] backdrop-blur-sm">
+
+
       <div className="editorial-container flex h-[3.75rem] items-center justify-between gap-6">
         <Link href="/" className="meta-text !text-[var(--text-primary)] tracking-[0.08em] hover:text-[var(--accent)] transition-colors" aria-label="Ark Tandon home">
           ARK TANDON
@@ -80,18 +84,30 @@ export default function Nav() {
             );
           })}
         </nav>
-        <button
-          type="button"
-          className="inline-flex items-center justify-center border border-[var(--border)] p-2 text-[var(--text-primary)] md:hidden"
-          aria-label={open ? 'Close menu' : 'Open menu'}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X size={16} strokeWidth={1.5} /> : <Menu size={16} strokeWidth={1.5} />}
-        </button>
+        <div className="flex items-center gap-2 md:gap-3">
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="inline-flex items-center justify-center border border-[var(--border)] p-2 text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
+            aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+          >
+            {theme === 'dark' ? <Sun size={15} strokeWidth={1.5} aria-hidden /> : <Moon size={15} strokeWidth={1.5} aria-hidden />}
+          </button>
+          <button
+            type="button"
+            className="inline-flex items-center justify-center border border-[var(--border)] p-2 text-[var(--text-primary)] md:hidden"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X size={16} strokeWidth={1.5} /> : <Menu size={16} strokeWidth={1.5} />}
+          </button>
+        </div>
       </div>
       {open ? (
-        <nav className="border-t border-[var(--border)] bg-[var(--bg)] md:hidden" aria-label="Mobile">
+        <nav className="border-t border-[var(--nav-border)] bg-[var(--nav-bg)] backdrop-blur-sm md:hidden" aria-label="Mobile">
+
+
           <div className="editorial-container flex flex-col py-2">
             {navItems.map((item) => {
               const isSection = item.href.startsWith('#');
@@ -111,3 +127,5 @@ export default function Nav() {
     </header>
   );
 }
+
+

@@ -42,7 +42,8 @@ export default function CertModal({ open, onClose, achievement }: CertModalProps
   return (
     <div role="dialog" aria-modal="true" aria-label={achievement.title} className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6">
       <div className="absolute inset-0 bg-[color:color-mix(in_srgb,var(--text-primary)_18%,transparent)]" onClick={onClose} aria-hidden />
-      <div className="relative z-10 w-full max-w-4xl border border-[var(--border)] bg-[var(--bg)]">
+      <div className="relative z-10 w-full max-w-4xl border border-[var(--border)] bg-[var(--surface)]">
+
         <div className="flex items-start justify-between gap-4 border-b border-[var(--border)] p-5">
           <div>
             <p className="meta-text uppercase tracking-[0.12em]">{achievement.type}</p>
@@ -53,7 +54,7 @@ export default function CertModal({ open, onClose, achievement }: CertModalProps
           </button>
         </div>
         <div className="grid gap-6 p-5 md:grid-cols-2">
-          <div className="relative aspect-[4/3] border border-[var(--border)] bg-[var(--surface)]">
+          <div className="relative aspect-[4/3] border border-[var(--border)] bg-[color:color-mix(in_srgb,var(--surface)_72%,transparent)]">
             <Image src={achievement.image_url} alt={achievement.title} fill className="object-contain p-3" sizes="(min-width: 768px) 45vw, 100vw" />
           </div>
           <div>
@@ -65,3 +66,5 @@ export default function CertModal({ open, onClose, achievement }: CertModalProps
     </div>
   );
 }
+
+

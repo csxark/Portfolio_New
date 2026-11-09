@@ -26,7 +26,7 @@ export default function Experience() {
                 <div>
                   <div className="flex items-start gap-3">
                     {item.logo ? (
-                      <div className="relative mt-0.5 h-9 w-9 shrink-0 overflow-hidden border border-[var(--border)] bg-[var(--surface)]">
+                      <div className="relative mt-0.5 h-9 w-9 shrink-0 overflow-hidden border border-[var(--border)] bg-[color:color-mix(in_srgb,var(--surface)_72%,transparent)]">
                         <Image src={item.logo} alt="" fill className="object-contain p-1.5" sizes="36px" />
                       </div>
                     ) : null}
@@ -55,3 +55,4 @@ export default function Experience() {
     </section>
   );
 }
+
