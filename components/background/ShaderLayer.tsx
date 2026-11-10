@@ -11,6 +11,7 @@ export type ShaderPalette = {
   reflection: number;
   uStrength: number;
   uDensity: number;
+  lightType: '3d' | 'env';
   grain: 'on' | 'off';
 };
 
@@ -23,18 +24,20 @@ export const DARK_PALETTE: ShaderPalette = {
   reflection: 0.3,
   uStrength: 0.3,
   uDensity: 0.85,
+  lightType: 'env',
   grain: 'on',
 };
 
-/** Light mode: soft icy-blue/cyan wash, low intensity, subtle. */
+/** Light mode: saturated sky-blue/cyan highlights that remain visible on a pale base. */
 export const LIGHT_PALETTE: ShaderPalette = {
-  color1: '#c9e3f0',
-  color2: '#bfe8f4',
-  color3: '#e4f2f9',
-  brightness: 0.5,
-  reflection: 0.1,
-  uStrength: 0.12,
-  uDensity: 0.55,
+  color1: '#1976D2',
+  color2: '#3156C8',
+  color3: '#00A5C8',
+  brightness: 0.9,
+  reflection: 0.2,
+  uStrength: 0.3,
+  uDensity: 0.82,
+  lightType: '3d',
   grain: 'off',
 };
 
@@ -46,7 +49,6 @@ type Props = {
 };
 
 /**
- * WebGL shader layer adapted from Aditya-J/Aditya-J src/components/Background.
  * Geometry/camera/rotation preserved; palette + strength/density/brightness/reflection/grain theme-driven.
  */
 export default function ShaderLayer({ pixelDensity, animate, speed, palette }: Props) {
@@ -90,7 +92,7 @@ export default function ShaderLayer({ pixelDensity, animate, speed, palette }: P
         cPolarAngle={180}
         cDistance={0.5}
         cameraZoom={15.1}
-        lightType="env"
+        lightType={palette.lightType}
         brightness={palette.brightness}
         envPreset="city"
         grain={palette.grain}

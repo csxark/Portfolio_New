@@ -21,7 +21,7 @@ const SHADER_SPEED = { dark: 0.04, light: 0.025 } as const;
  * Layers, bottom to top:
  * 1. static theme-aware CSS base + subtle glow fallback (always present)
  * 2. ShaderGradient WebGL layer (client-only, lazy, paused when hidden/reduced motion)
- *    - light mode: low opacity (var --shader-opacity) so base remains dominant
+ *    - light mode uses color blending to reveal shader hues without darkening the base
  * 3. theme-aware atmospheric veil for text readability
  * 4. existing portfolio content renders above this component
  */
@@ -69,11 +69,14 @@ function BackgroundImpl() {
         }}
       />
 
-      {/* Layer 2: WebGL shader - opacity controlled per theme (light stays subtle) */}
+      {/* Layer 2: WebGL shader; color blending keeps dark pixels from becoming black patches in light mode. */}
       {webgl ? (
         <div
           className="absolute inset-0 animate-[shader-fade_1.2s_ease-out_both]"
-          style={{ opacity: 'var(--shader-opacity)' }}
+          style={{
+            opacity: 'var(--shader-opacity)',
+            mixBlendMode: theme === 'light' ? 'color' : 'normal',
+          }}
         >
           <ShaderErrorBoundary>
             <ShaderLayer
@@ -94,4 +97,3 @@ function BackgroundImpl() {
 
 export const Background = memo(BackgroundImpl);
 export default Background;
-
